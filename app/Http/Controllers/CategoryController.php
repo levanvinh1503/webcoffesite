@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Category;
 use Validator;
 use Illuminate\Validation\Rule;
+use App\ActiveLog;
+use Auth;
 
 class CategoryController extends Controller
 {
@@ -43,6 +45,11 @@ class CategoryController extends Controller
         $newCategory->slug = $requestData->input('slug');
         /*Add a new category*/
         $newCategory->save();
+
+        $log = new ActiveLog();
+        $log->content = Auth::User()->name . " thêm chuyên mục " . $requestData->input('name');
+        $log->save();
+
         return redirect()->back()->with('thanhcong', 'Thêm chuyên mục thành công');
     }
 
@@ -83,6 +90,9 @@ class CategoryController extends Controller
             );
             /*Check update category*/
             if ($categoryModel->update($arrayData)) {
+                $log = new ActiveLog();
+                $log->content = Auth::User()->name . " sửa chuyên mục " . $requestData->input('name');
+                $log->save();
                 return redirect()->back()->with('thanhcong', 'Sửa chuyên mục thành công'); 
             } else {
                 return redirect()->back()->with('errors', 'Sửa chuyên mục thất bại');

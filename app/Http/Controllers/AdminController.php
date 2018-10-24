@@ -10,6 +10,7 @@ use App\Post;
 use App\User;
 use App\Product;
 use Auth;
+use App\ActiveLog;
 
 class AdminController extends Controller
 {

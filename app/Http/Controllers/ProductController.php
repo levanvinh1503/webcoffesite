@@ -9,6 +9,7 @@ use Validator;
 use Illuminate\Validation\Rule;
 use File;
 use Auth;
+use App\ActiveLog;
 
 class ProductController extends Controller
 {
@@ -57,6 +58,10 @@ class ProductController extends Controller
         $product->status = 0;
         /*Add a new post*/
         $product->save();
+
+        $log = new ActiveLog();
+        $log->content = Auth::User()->name . " thêm sản phẩm " . $requestData->input('name');
+        $log->save();
 
         return redirect()->back()->with('thanhcong', 'Thêm sản phẩm thành công');
     }
@@ -116,6 +121,9 @@ class ProductController extends Controller
         /*Update post*/
         if ($validatorInput->passes()) {
             Product::where('id', $id)->update($arrayData);
+            $log = new ActiveLog();
+            $log->content = Auth::User()->name . " cập nhật sản phẩm " . $requestData->input('name');
+            $log->save();
             return redirect()->back()->with('thanhcong', 'Sửa sản phẩm thành công');
         } else {
             return redirect()->back()->with('errors', $validatorInput->errors()->all());

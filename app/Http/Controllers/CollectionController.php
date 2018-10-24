@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Collection;
+use App\ActiveLog;
+use Auth;
 
 class CollectionController extends Controller
 {
@@ -42,6 +44,9 @@ class CollectionController extends Controller
         $collection->slug = $requestData->input('collection-slug');
         /*Add a new category*/
         $collection->save();
+        $log = new ActiveLog();
+        $log->content = Auth::User()->name . " thêm nhóm sản phẩm " . $requestData->input('collection-name');
+        $log->save();
         return redirect()->back()->with('thanhcong','Thêm nhóm sản phẩm thành công');
     }
 }

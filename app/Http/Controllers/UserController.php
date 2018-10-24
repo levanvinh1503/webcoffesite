@@ -7,6 +7,8 @@ use App\User;
 use App\Role;
 use Validator;
 use Illuminate\Validation\Rule;
+use App\ActiveLog;
+use Auth;
 
 class UserController extends Controller
 {

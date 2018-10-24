@@ -8,6 +8,7 @@ use App\Post;
 use App\Category;
 use Validator;
 use Auth;
+use App\ActiveLog;
 
 class PostController extends Controller
 {
@@ -64,6 +65,11 @@ class PostController extends Controller
         $newPost->status = 0;
         /*Add a new post*/
         $newPost->save();
+
+        $log = new ActiveLog();
+        $log->content = Auth::User()->name . " thêm bài viết " . $requestData->input('name');
+        $log->save();
+
         return redirect()->back()->with('thanhcong','Thêm bài viết thành công');
     }
 
@@ -117,7 +123,10 @@ class PostController extends Controller
         );
         /*Update post*/
         if ($validatorInput->passes()) {
-            $updatePost = Post::where('id', $id)->update($arrayData);
+            Post::where('id', $id)->update($arrayData);
+            $log = new ActiveLog();
+            $log->content = Auth::User()->name . " chỉnh sửa bài viết " . $requestData->input('name');
+            $log->save();
             return redirect()->back()->with('thanhcong','Sửa bài viết thành công');
         } else {
             return redirect()->back()->with('errors', $validatorInput->errors()->all());
