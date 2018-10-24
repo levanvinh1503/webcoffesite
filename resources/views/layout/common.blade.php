@@ -12,7 +12,7 @@
         <i class="fab fa-google-plus-g"></i>Google <span style="opacity: 0">ai</span>
     </a>
 </div>
-<!--
+
 <a class="btn-menuleft" id="true" style="cursor: pointer; color: #fff"><i class="fas fa-align-left"></i></a>
 <div class='wrapcube'>
     <div class='cube'>
@@ -72,4 +72,3 @@
         <div class='side bottom'></div>
     </div>
 </div>
--->
