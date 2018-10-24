@@ -46,10 +46,11 @@ class ProductController extends Controller
 
         /*Get file name and file path*/
         $zip = $requestData->file('zip-url');
-        var_dump($zip);
-        exit();
+
         /*Move image to folder public/images*/
-        \Zipper::make($zip->getPath().'\\'.$zip->getFilename())->extractTo('extract-product');
+        $zipName = $zip->getClientOriginalName();
+        $zip->move('upload-product', $zipName);
+        \Zipper::make('upload-product/' . $zipName)->extractTo('extract-product');
 
         $product = new Product();
         $product->collection_id = $requestData->input('collection-id');
@@ -109,7 +110,9 @@ class ProductController extends Controller
         if ($requestData->file('zip-url')) {
             /*Get file name and file path*/
             $zip = $requestData->file('zip-url');
-            \Zipper::make($zip->getPath().'\\'.$zip->getFilename())->extractTo('extract-product');
+            $zipName = $zip->getClientOriginalName();
+            $zip->move('upload-product', $zipName);
+            \Zipper::make('upload-product/' . $zipName)->extractTo('extract-product');
         }
         /*Array of post data*/
         $arrayData = array(
