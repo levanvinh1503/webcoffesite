@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class ActiveLog extends Migration
+class Page extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class ActiveLog extends Migration
      */
     public function up()
     {
-        Schema::create('active_log', function (Blueprint $table) {
+        Schema::create('page', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('content');
+            $table->integer('user_id');
+            $table->string('title');
+            $table->text('content');
+            $table->boolean('status')->default(0);
             $table->timestamps();
         });
     }
