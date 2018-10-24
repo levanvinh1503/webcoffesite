@@ -46,6 +46,8 @@ class ProductController extends Controller
 
         /*Get file name and file path*/
         $zip = $requestData->file('zip-url');
+        var_dump($zip);
+        exit();
         /*Move image to folder public/images*/
         \Zipper::make($zip->getPath().'\\'.$zip->getFilename())->extractTo('extract-product');
 
