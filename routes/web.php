@@ -22,7 +22,6 @@ Route::get('about-us', 'PageController@getAboutUs')->name('home-about-us');
 Route::get('collection', 'PageController@getCollection')->name('home-collection');
 Route::get('category/{slug}', 'PageController@getCategory')->name('home-category');
 Route::get('post/{slug}', 'PageController@getPost')->name('home-post');
-Route::get('contact', 'PageController@getContact')->name('home-contact');
 Route::post('contact', 'PageController@postContact')->name('home-contact');
 /*Route Admin*/
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {

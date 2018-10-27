@@ -1,254 +1,471 @@
 @extends('layout.layout')
 @section('css')
-<style>
-body {
-    background: rgb(177, 218, 251);
-}
-</style>
+
 @endsection
 @section('content')
-@include('layout.common')
-<!-- banner -->
-<section class="banner" id="home">
-    <div class="callbacks_container">
-        <ul class="rslides" id="slider3">
-            <li>
-                <div class="slider-info bg1 w3-agile-grid">
-                    <div class="bs-slider-overlay">
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="slider-info bg2 w3-agile-grid">
-                    <div class="bs-slider-overlay">
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="slider-info bg3 w3-agile-grid">
-                    <div class="bs-slider-overlay">
-                    </div>
-                </div>
-            </li>
-            <li>
-                <div class="slider-info bg4 w3-agile-grid">
-                    <div class="bs-slider-overlay">
-                    </div>
-                </div>
-            </li>
-        </ul>
-    </div>
-</section>
-<!-- //banner -->
 
-<!-- about -->
-<section class="about py-5">
-    <div class="container py-md-3">
-        <h3 class="heading mb-md-5 mb-4 about-us">Giới thiệu</h3>
-        <div class="row about-grids agile-info">
-            <div class="col-lg-6 mb-lg-0 w3-agile-grid mb-5">
-                <p>Với đội ngũ nhân viên dày dặn kinh nghiệm trong lĩnh vực làm web, nhìn thấy được nhu cầu làm web
-                    và các khó khăn của khách hàng trong việc tìm và sử dùng dịch vụ uy tín và an toàn. Chúng tôi
-                    cam kết dịch vụ <span style="font-weight: bold;">webcoffeesite.com</span> của chúng tôi cung cấp
-                    sản phẩm <span style="font-weight: bold;">chất lượng 100%</span>.
-                Luôn đồng hành cùng khách hàng trong quá trình sử dụng web của chúng tôi cung cấp. </p>
-                <p class="mt-2 mb-3">Chúng tôi đặt tiêu chí sản phẩm của khách hàng lên hàng đầu. Cam kết hoàn tiền
-                    nếu dịch vụ không đạt yêu cầu của khách hàng trong quá trình sử dụng. Nhận yêu cầu khắc phục sự
-                    cố 24/24, giải quyết <span style="font-weight: bold;">nhanh-gọn-lẹ</span> ngay khi có yêu cầu.
-                </p>
-                <p>Khách hàng hợp tác với <span style="font-weight: bold;">webcoffesite</span> sẽ được tư vấn theo
-                    từng bước chuyên nghiệp từ phân tích ý tưởng, thiết kế giao diện, lập trang web, thiết kế
-                    responsive phiên bản di động, hướng dẫn sử dụng, tối ưu hóa công cụ tìm kiếm. Báo cáo theo từng
-                    giai đoạn cụ thể.
-                </p>
-                <a href="{{ route('home-about-us') }}">Đọc thêm</a>
-            </div>
-            <div class="col-lg-3 col-md-4 w3-agile-grid pr-md-0">
-                <h3 class="margin">Chuyên nghiệp</h3>
-                <h3 class="black">nhanh - gọn - lẹ</h3>
-            </div>
-            <div class="col-lg-3 col-md-4 w3-agile-grid mt-md-0 mt-4">
-                <h3 class="margin green">Tận tâm với khách hàng</h3>
-                <h3 class="grey">Trả phí một lần duy nhất</h3>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- //about -->
-
-<!-- how we work -->
-<section class="work">
-    <div class="work-layer py-5">
-        <div class="container py-md-3">
-            <h3 class="heading mb-lg-5 mb-4">How We Work</h3>
-            <div class="row join agile-info">
-                <div class="col-md-3 col-sm-6 steps-reach w3-agile-grid">
-                    <span class="fab fa-algolia"></span>
-                    <h4>Step 1</h4>
-                    <p>Tiếp nhận yêu cầu. Thiết kế giao diện theo yêu cầu.</p>
-                    <div class="style-border">
-                        <img src="images/sty1.png" alt="">
+    <!--home Section -->
+    <section id="home" class="home">
+        <div class="overlay">
+            <div class="home_skew_border">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-12 ">
+                            <div class="main_home_slider text-center">
+                                <div class="single_home_slider">
+                                    <div class="main_home wow fadeInUp">
+                                        <h1>WELCOME TO WEBCOFFEESITE</h1>
+                                        <div class="separator"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 mt-sm-0 mt-5 steps-reach w3-agile-grid">
-                    <span class="fab fa-asymmetrik"></span>
-                    <h4>Step 2</h4>
-                    <p>Demo sản phẩm ban đầu. Tiếp nhận thêm yêu cầu chỉnh sửa sản phẩm.</p>
-                    <div class="style-border second-border">
-                        <img src="images/sty2.png" alt="">
+            </div>
+        </div>
+    </section><!--End of home section -->
+    <!-- History section -->
+    <section id="about-us" class="history sections">
+        <div class="container">
+            <div class="row">
+                <div class="main_history">
+                    <div class="col-sm-6">
+                        <div class="single_history_img">
+                            <img src="{{asset('images/about-us.jpg')}}" alt=""/>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6">
+                        <div class="single_history_content">
+                            <div class="head_title">
+                                <h2>Giới thiệu</h2>
+                            </div>
+                            <p>It is a long established fact that a reader will be distracted by the readable content of
+                                a page
+                                when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less
+                                normal
+                                distribution of letters, as opposed to using 'Content here, content here', making it
+                                look like readable English. Many desktop publishing packages and web page editors now
+                                use
+                                Lorem Ipsum as their default model text, and a search for 'lorem ipsum' </p>
+
+                            <a href="{{route('home-about-us')}}" class="btn btn-lg">Xem thêm</a>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 mt-md-0 mt-5 pt-md-0 pt-sm-5 steps-reach w3-agile-grid">
-                    <span class="fas fa-bug" aria-hidden="true"></span>
-                    <h4>Step 3</h4>
-                    <p>Bàn giao website. Hỗ trợ khai báo sitemap với google. Hướng dẫn sử dụng hệ thống website</p>
-                    <div class="style-border">
-                        <img src="images/sty1.png" alt="">
+            </div><!--End of row -->
+        </div><!--End of container -->
+    </section><!--End of history -->
+    <!-- service Section -->
+    <section id="service" class="service">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="main_service">
+                    <div class="col-md-6 col-sm-12 no-padding">
+                        <div class="single_service single_service_text text-right">
+                            <div class="head_title">
+                                <h2>DỊCH VỤ</h2>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
+                                    <div class="row">
+                                        <div class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1">
+                                            <article class="single_service_right_text">
+                                                <h4>Thiết kế Website</h4>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    industry.
+                                                    Lorem Ip sum has been the industry's standard dummy text ever.</p>
+                                            </article>
+                                        </div>
+                                        <div class="col-sm-1 col-xs-1">
+                                            <figure class="single_service_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </figure><!-- End of figure -->
+                                        </div>
+                                    </div>
+                                </div><!-- End of col-sm-12 -->
+                                <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
+                                    <div class="row">
+
+                                        <div class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1">
+                                            <article class="single_service_right_text">
+                                                <h4>Marketing Online SEO</h4>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    industry.
+                                                    Lorem Ip sum has been the industry's standard dummy text ever.</p>
+                                            </article>
+                                        </div>
+                                        <div class="col-sm-1 col-xs-1">
+                                            <figure class="single_service_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </figure><!-- End of figure -->
+                                        </div>
+                                    </div>
+                                </div><!-- End of col-sm-12 -->
+
+                                <div class="col-md-12 col-sm-10 col-xs-10 margin-bottom-60">
+                                    <div class="row">
+
+                                        <div class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1 margin-bottom-20">
+                                            <article class="single_service_right_text">
+                                                <h4>Marketing Online SEO</h4>
+                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting
+                                                    industry.
+                                                    Lorem Ip sum has been the industry's standard dummy text ever.</p>
+                                            </article>
+                                        </div>
+                                        <div class="col-sm-1 col-xs-1">
+                                            <figure class="single_service_icon">
+                                                <i class="fa fa-heart"></i>
+                                            </figure><!-- End of figure -->
+                                        </div>
+                                    </div>
+                                </div><!-- End of col-sm-12 -->
+
+                            </div>
+                        </div>
+                    </div><!-- End of col-sm-6 -->
+
+                    <div class="col-md-6 col-sm-12 no-padding">
+                        <figure class="single_service single_service_img">
+                            <div class="overlay-img"></div>
+                            <img src="{{asset('images/servicerightimg.jpg')}}" alt=""/>
+                        </figure><!-- End of figure -->
+                    </div><!-- End of col-sm-6 -->
+
+                </div>
+            </div><!-- End of row -->
+        </div><!-- End of Container-fluid -->
+    </section><!-- End of service Section -->
+    <section id="portfolio" class="portfolio sections">
+        <div class="container">
+            <div class="row">
+                <div class="main_portfolio">
+                    <div class="col-sm-12">
+                        <div class="head_title text-center" style="margin-bottom: 0">
+                            <h2>KHO GIAO DIỆN</h2>
+                            <div class="separator"></div>
+                        </div>
+                    </div>
+                    <div class="work_menu text-center">
+                        <div id="filters" class="toolbar mb2 mt2">
+                            <button class="btn-md fil-cat filter active" data-filter=".all">Tất cả</button>
+                            @foreach($collection as $item)
+                                <button class="btn-md fil-cat filter active" data-filter=".{{$item->slug}}">
+                                    {{$item->name}}
+                                </button>
+                            @endforeach
+                        </div>
+                    </div>
+                    <div style="clear:both;"></div>
+                    <div id="portfoliowork">
+                        @foreach($product as $itemProduct)
+                            <div class="single_portfolio tile scale-anm all {{$itemProduct->ProductCollection->slug}}">
+                                <img src="{{asset('images/'.$itemProduct->image.'')}}" alt="Click để xem ảnh lớn"/>
+                                <a href="{{asset('images/'.$itemProduct->image.'')}}" class="portfolio-img" alt="Click để xem ảnh lớn">
+                                    <div class="grid_item_overlay">
+                                        <div class="separator4" style="margin: 0"></div>
+                                        <h3>{{$itemProduct->name}}</h3>
+                                    </div>
+                                </a>
+                                <a href="extract-product/{{$itemProduct->slug}}" class="preview">Xem thử</a>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div><!-- End off container -->
+    </section> <!-- End off Work Section -->
+    <!-- Counter Section -->
+    <section id="counter" class="counter">
+        <div class="video_overlay">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="main_counter_area text-center">
+                            <div class="row">
+                                <div class="single_counter border_right">
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_counter_item">
+                                            <i class="far fa-thumbs-up"></i>
+                                            <h2 class="statistic-counter">3891</h2>
+                                            <h4 class="">Lượt truy cập</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="single_counter">
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_counter_item">
+                                            <i class="fas fa-trophy"></i>
+                                            <h2 class="statistic-counter">281</h2>
+                                            <h4 class="">Giao diện</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="single_counter">
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_counter_item">
+                                            <i class="fas fa-business-time"></i>
+                                            <h2 class="statistic-counter">618</h2>
+                                            <h4 class="">Bài viết</h4>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="single_counter">
+                                    <div class="col-sm-3 col-xs-12">
+                                        <div class="single_counter_item">
+                                            <i class="fas fa-users"></i>
+                                            <h2 class="statistic-counter">178</h2>
+                                            <h4 class="">Người đăng ký</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 mt-md-0 mt-5 pt-md-0 pt-sm-5 steps-reach w3-agile-grid">
-                    <span class="fas fa-check-square" aria-hidden="true"></span>
-                    <h4>Step 4</h4>
-                    <p>Chăm sóc website trong quá trình khách hàng sử dụng. Nhận yêu cầu chỉnh sửa và hỗ trợ khách
-                    hàng tận răng.</p>
-                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </div><!-- End off container -->
+    </section>   <!-- End of counter section -->
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="row">
+                <div class="main_pricing_area sections">
+                    <div class="head_title text-center" style="margin-bottom: 0">
+                        <h2>BẢNG GIÁ</h2>
+                        <div class="separator"></div>
+                    </div><!-- End off Head_title -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single_pricing">
+                            <div class="pricing_head">
+                                <h3>STARTER</h3>
+                                <div class="pricing_price">
+                                    <div class="p_r text-center">1 triệu VNĐ</div>
+                                </div>
+                            </div>
 
-<!-- //how we work -->
-<section class="template container-fluid">
-    <!--kho giao dien-->
-    <div id="w154115" style=" padding-top: 5%; padding-bottom: 5px;" class="templates">
-        <h1 style="text-align: center; color: #5e3204;"><b style="">KHO GIAO DIỆN</b><br></h1>
-    </div>
-    <div class="row row-template">
-        @foreach ($product as $elementProduct)
-        <div wiz-cg="loop" class="col-md-4" id="w15458" style="padding:0">
-            <div class="product-hover" style="padding: 10px; border-radius: 10px; margin: 10px 2px 30px; background-color: rgb(255, 255, 255);box-shadow: 0px 13px 25px -4px rgba(58,163,224, 0.55);margin:10px 20px">
-                <img style="width: 100%;object-fit:cover; height:200px" alt="iPhone" id="w15459" src="{{ asset('images/'.$elementProduct->image.'') }}" class="myImg">
-                <h3 style=" text-align:center;font-size:1.5em;color:rgb(132,133,135);" id="w154510">
-                    <strong style="" id="w154511">
-                        {{ $elementProduct->name }}
-                    </strong>
-                    <div style="text-align:center;" class="group-template" id="w154512">
-                        <a style="padding:5px 10px; background-color:green;color:#fff; border-radius: 10px; font-size:16px;margin-right:3px; text-decoration:none" href="extract-product/{{ $elementProduct->slug }}" class="buttontemplate" id="w154513" target="_blank">
-                            <i class="fas fa-search-plus" style="margin-right: 3px;" id="w154514"></i>
-                            Xem thử
-                        </a>
+                            <div class="pricing_body">
+                                <ul>
+                                    <li>Competition Analysis Methods</li>
+                                    <li>All Ranked URLs</li>
+                                    <li>International Support System</li>
+                                    <li>Social Media Tracking</li>
+                                </ul>
+                                <a href="" class="btn btn-md">Đăng ký</a>
+                            </div>
+                        </div>
+                    </div> <!-- End off col-md-4 -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single_pricing pricing_business">
+                            <div class="pricing_head ">
+                                <h3>PREMIUM</h3>
+                                <div class="pricing_price">
+                                    <div class="p_r text-center">1 triệu 5 VNĐ</div>
+                                </div>
+                            </div>
+
+                            <div class="pricing_body">
+                                <ul>
+                                    <li>Competition Analysis Methods</li>
+                                    <li>All Ranked URLs</li>
+                                    <li>International Support System</li>
+                                    <li>Social Media Tracking</li>
+                                </ul>
+                                <a href="" class="btn btn-md">Đăng ký</a>
+                            </div>
+                        </div>
+                    </div> <!-- End off col-md-4 -->
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single_pricing">
+                            <div class="pricing_head">
+                                <h3>BUSINESS</h3>
+                                <div class="pricing_price">
+                                    <div class="p_r text-center">2 triệu 5 VNĐ</div>
+                                </div>
+                            </div>
+
+                            <div class="pricing_body">
+                                <ul>
+                                    <li>Competition Analysis Methods</li>
+                                    <li>All Ranked URLs</li>
+                                    <li>International Support System</li>
+                                    <li>Social Media Tracking</li>
+                                </ul>
+                                <a href="" class="btn btn-md">Đăng ký</a>
+                            </div>
+                        </div>
+                    </div> <!-- End off col-md-4 -->
+                </div>
+            </div><!-- End off row -->
+        </div><!-- End off container -->
+    </section><!-- End off Pricing Section -->
+    <!-- Team Section -->
+    <section id="team" class="team">
+        <div class="main_team_area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="head_title textwhite text-center margin-top-80">
+                            <h2>THÀNH VIÊN</h2>
+                            <div class="separator"></div>
+                        </div><!-- End off Head_title -->
+
+                        <div class="main_team">
+                            <ul>
+                                <li>
+                                    <div class="single_team_img">
+                                        <img src="{{asset('images/team1.jpg')}}" alt=""/>
+                                    </div>
+                                    <div class="single_team_text">
+                                        <h4>Lê Văn Vịnh</h4>
+                                        <p>Developer</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single_team_img">
+                                        <img src="{{asset('images/team2.jpg')}}" alt=""/>
+                                    </div>
+                                    <div class="single_team_text">
+                                        <h4>Trần Quang Vinh</h4>
+                                        <p>Developer</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single_team_img">
+                                        <img src="{{asset('images/team3.jpg')}}" alt=""/>
+                                    </div>
+                                    <div class="single_team_text">
+                                        <h4>Phạm Huỳnh Bảo Long</h4>
+                                        <p>Marketing</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="single_team_img">
+                                        <img src="{{asset('images/team3.jpg')}}" alt=""/>
+                                    </div>
+                                    <div class="single_team_text">
+                                        <h4>Bùi Thanh Hiếu</h4>
+                                        <p>Developer</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div><!-- End of main team contant -->
+                </div>
+            </div><!-- End of container -->
+        </div>
+    </section><!-- End off Team Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="contact_contant sections">
+                        <div class="head_title text-center" style="margin-bottom: 0">
+                            <h2>LIÊN HỆ VỚI CHÚNG TÔI</h2>
+                            <div class="separator"></div>
+                        </div><!-- End off Head_title -->
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="main_contact_info">
+                                    <div class="row">
+                                        <div class="contact_info_content padding-top-90 padding-bottom-60 p_l_r">
+                                            <div class="col-sm-12">
+                                                <div class="single_contact_info">
+                                                    <div class="single_info_text">
+                                                        <h3>Địa chỉ</h3>
+                                                        <p>
+                                                            <i class="fas fa-map-marker"></i>
+                                                            Số 15, Đường số 6, Phường Hiệp Phú, Quận 9, TP. HCM
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="single_contact_info">
+                                                    <div class="single_info_text">
+                                                        <h3>Điện thoại</h3>
+                                                        <p><i class="fas mr-1 fa-phone"></i> 096 828 35 33</p>
+                                                        <p><i class="fas mr-1 fa-phone"></i> 038 569 94 20</p>
+                                                        <p><i class="fas mr-1 fa-phone"></i> 094 824 81 53</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="single_contact_info">
+                                                    <div class="single_info_text">
+                                                        <h3>Email</h3>
+                                                        <p>
+                                                            <i class="fas mr-1 fa-envelope-open"></i>
+                                                            <a href="mailto:webcoffeesite@gmail.com">webcoffeesite@gmail.com</a>
+                                                        </p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="single_contant_left padding-top-90 padding-bottom-90">
+                                    <form action="{{ route('home-contact') }}" id="formid" method="post">
+                                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                        @if(Session::has('thanhcong'))
+                                            <div class="alert alert-success"><p style="color: red">{{Session::get('thanhcong')}}</p></div>
+                                        @endif
+                                        <div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="name"
+                                                               placeholder="Họ tên" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <input type="email" class="form-control" name="email"
+                                                               placeholder="Email" required="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="title"
+                                                               placeholder="Tiêu đề" required="">
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12">
+                                                    <div class="form-group">
+                                                        <input type="text" class="form-control" name="phone"
+                                                               placeholder="Số điện thoại" required="">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                                <textarea class="form-control" name="message" rows="7"
+                                                          placeholder="Nội dung"></textarea>
+                                            </div>
+                                            <div class="">
+                                                <input type="submit" value="Gưi" class="btn btn-lg">
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </h3>
-            </div>
-        </div>
-        @endforeach
-    </div>
-    <div id="" class="designbyself mydesignbyself" style="display: none; position: fixed; z-index: 99; padding-top: 100px; left: 0; top: 0; width: 100%; height: 100%; overflow: auto; background-color: rgb(0,0,0); background-color: rgba(0,0,0,0.9); text-align: center;">
-        <span class="close" style="color:#fff; position:absolute; top:5%; right:5%; opacity:0.8; position:fixed">×</span>
-        <img class="designbyself-content img01" id="" src="https://i.imgur.com/kSSwHSp.png">
-        <div class="designbyselfcaption"></div>
-    </div>
-    <!--ket thuc kho giao dien-->
-</section>
-<!-- management services -->
-<section class="services py-5">
-    <div class="container agile-info py-md-3">
-        <h3 class="heading mb-lg-5 mb-4">DỊCH VỤ CHÚNG TÔI CUNG CẤP</h3>
-        <div class="row service_grids">
-            <div class="col-lg-4 w3-agile-grid">
-                <div class="grid">
-                    <h4 class="mb-3">Thiết Kế Website</h4>
-                    <p>Cras blandit nibh ut pretium elementum. Duis bibendum convallis nun ca dictum. Quisquen ac
-                        ipsum porta, ultrices metus sit amet,
-                    curs in nisl. Duis aliquet varius sem sit amet.</p>
-                    <a href="{{ route('home-services') }}" data-toggle="modal" data-target="#exampleModalCenter" role="button">
-                        Đọc thêm 
-                        <span class="fas ml-1 fa-angle-double-right"></span> 
-                    </a>
-                </div>
-                <div class="grid mt-4">
-                    <h4 class="mb-3">Marketing Online Seo</h4>
-                    <p>Cras blandit nibh ut pretium elementum. Duis bibendum convallis nun ca dictum. Quisquen ac
-                        ipsum porta, ultrices metus sit amet,
-                    curs in nisl. Duis aliquet varius sem sit amet.</p>
-                    <a href="{{ route('home-services') }}" data-toggle="modal" data-target="#exampleModalCenter" role="button">
-                        Đọc thêm 
-                        <span class="fas ml-1 fa-angle-double-right"></span> 
-                    </a>
-                </div>
-            </div>
-            <div class="col-lg-4 col-md-6 my-lg-0 my-5">
-                <img src="images/service.jpg" alt="" class="img-fluid"/>
-            </div>
-            <div class="col-lg-4 w3-agile-grid">
-                <div class="grid">
-                    <h4 class="mb-3">Thiết Kế Website Bán Hàng</h4>
-                    <p>Cras blandit nibh ut pretium elementum. Duis bibendum convallis nun ca dictum. Quisquen ac
-                        ipsum porta, ultrices metus sit amet,
-                    curs in nisl. Duis aliquet varius sem sit amet.</p>
-                    <a href="{{ route('home-services') }}" data-toggle="modal" data-target="#exampleModalCenter" role="button">
-                        Đọc thêm
-                        <span class="fas ml-1 fa-angle-double-right"></span> 
-                    </a>
-                </div>
-                <div class="grid mt-4">
-                    <h4 class="mb-3">Thiết Kế Website Giới Thiệu</h4>
-                    <p>Cras blandit nibh ut pretium elementum. Duis bibendum convallis nun ca dictum. Quisquen ac
-                        ipsum porta, ultrices metus sit amet,
-                    curs in nisl. Duis aliquet varius sem sit amet.</p>
-                    <a href="{{ route('home-services') }}" data-toggle="modal" data-target="#exampleModalCenter" role="button">
-                        Đọc thêm
-                        <span class="fas ml-1 fa-angle-double-right"></span> 
-                    </a>
                 </div>
             </div>
         </div>
-    </div>
-</section>
-<!-- //management services -->
+    </section><!-- End of contact section -->
+@endsection
+@section('script')
 
-<!-- servicesbottom -->
-<section class="webdesigned container-fluid">
-    <div style="padding-top: 5%;padding-bottom: 5px;" class="images">
-        <h1 style="text-align: center; color: #5e3204"><b> CÁC WEBSITE ĐÃ LÀM</b><br></h1>
-    </div>
-    <div>
-        <div style="width: 100%;padding-left: 0px;padding-right: 0px">
-            <div class="row" wiz-data="banner" wiz-type="bannerfocus" wiz-md="mdlink" wiz-max="50" wiz-start="1">
-                <div wiz-cg="loop" class="col-md-4">
-                    <a href="#" id="w114954"><img src="https://i.imgur.com/icgtJ35.jpg" =""="" style="width: 100%;margin-top: 10px;box-shadow: 0px 5px 25px -4px rgba(151, 170, 172, 0.55);object-fit: cover;height: 454px" class="myImg" id="w114955" title="Click để xem lớn hơn"></a>
-                </div>
-                <div wiz-cg="loop" class="col-md-4">
-                    <a href="#" id="w114954"><img src="https://i.imgur.com/kSSwHSp.png" =""="" style="width: 100%;margin-top: 10px;box-shadow: 0px 5px 25px -4px rgba(151, 170, 172, 0.55);object-fit: cover;height: 454px" class="myImg" id="w114955" title="Click để xem lớn hơn"></a>
-                </div>
-                <div wiz-cg="loop" class="col-md-4">
-                    <a href="#" id="w114954"><img src="https://i.imgur.com/7JhT6Ut.png?1" =""="" style="width: 100%;margin-top: 10px;box-shadow: 0px 5px 25px -4px rgba(151, 170, 172, 0.55);object-fit: cover;height: 454px" class="myImg" id="w114955" title="Click để xem lớn hơn"></a>
-                </div>
-            </div>
-            <div id="" class="designbyself mydesignbyself">
-                <span class="close"
-                style="color:#fff; position:absolute; top:5%; right:5%; opacity:0.8; position:fixed">×</span>
-                <img class="designbyself-content img01" id="">
-                <div class="designbyselfcaption"></div>
-            </div>
-        </div>
-    </div>
-</section>
-<!-- //servicesbottom -->
-
-<!-- quotes -->
-<section class="quotes py-5 text-center">
-    <div class="container py-md-3">
-        <div class="quotes-info agile-info-quotes">
-            <h3 class="mb-3">ĐĂNG KÝ</h3>
-            <p>Cras blandit nibh ut pretium elementum. Duis bibendum convallis nun ca dictum. Quisquen ac ipsum
-                porta, ultrices metus sit amet,
-            curs in nisl. Duis aliquet varius sem sit amet.</p>
-            <a class="bt mt-4 mr-2 text-capitalize" href="#" data-toggle="modal" data-target="#exampleModalCenter"
-            role="button"> read more</a>
-            <a class="bt mt-4 text-capitalize start" href="contact.html" role="button"> Get Started</a>
-        </div>
-    </div>
-</section>
-<!-- //quotes -->
 @endsection

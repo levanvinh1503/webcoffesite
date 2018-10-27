@@ -20,8 +20,9 @@ class PageController extends Controller
 {
     public function getHome()
     {
-        $product = Product::paginate(6);
-    	return view('front.page.home', compact('product'));
+        $collection = Collection::all();
+        $product = Product::all();
+    	return view('front.page.home', compact('product', 'collection'));
     }
 
     public function getLogin()
@@ -123,11 +124,6 @@ class PageController extends Controller
         return view('front.post.detail', compact('arrayPost', 'arrayPostOther', 'category'));
     }
 
-    public function getContact()
-    {
-        return view('front.page.contact');
-    }
-
     public function postContact(Request $requestData)
     {
         $contact = new Contact();
@@ -137,6 +133,6 @@ class PageController extends Controller
         $contact->phone = $requestData->input('phone');
         $contact->content = $requestData->get('message');
         $contact->save();
-        return redirect()->back()->with('thanhcong','Cảm ơn bạn đã gửi liên hệ với chúng tôi ! Chúng tôi sẽ sớm liên lạc với bạn !');
+        return redirect()->to('/#contact')->with('thanhcong','Cảm ơn bạn đã gửi liên hệ với chúng tôi ! Chúng tôi sẽ sớm liên lạc với bạn !');
     }
 }
