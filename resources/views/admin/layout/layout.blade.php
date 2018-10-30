@@ -224,7 +224,7 @@
     <script src="{{ asset('js/admin/modernizr.custom.js') }}"></script>
     <script src="{{ asset('js/admin/metisMenu.min.js') }}"></script>
     <script src="{{ asset('js/admin/custom.js') }}"></script>
-    <script src="{{ asset('js/slug.js') }}"></script>
+    <script src="{{ asset('js/admin/slug.js') }}"></script>
     <script src="{{ asset('ckeditor/ckeditor.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/jquery.dataTables.min.js') }}"></script>
 
